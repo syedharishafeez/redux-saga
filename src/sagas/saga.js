@@ -1,13 +1,13 @@
 import { takeEvery, put } from "redux-saga/effects";
 
-function* incrementAsync() {
-  console.log("In incrementAsync");
-  yield put({ type: "INCREMENT_ASYNC" });
+function* incrementAsync(props) {
+  console.log("In incrementAsync = ", props);
+  yield put({ type: "INCREMENT_ASYNC", incrementBy: props.incrementBy });
 }
 
-function* decrementAsync() {
+function* decrementAsync(props) {
   console.log("In decrementAsync");
-  yield put({ type: "DECREMENT_ASYNC" });
+  yield put({ type: "DECREMENT_ASYNC", decrementBy: props.decrementBy });
 }
 
 export function* watchIncrement() {
