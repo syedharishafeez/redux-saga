@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Increment, Decrement, Reset } from "./actions/CounterActions";
 class App extends Component {
   state = {};
   render() {
@@ -26,7 +25,7 @@ const mapDispatchToProps = dispatch => {
   return {
     increment: () => dispatch({ type: "INCREMENT", incrementBy: 1 }),
     decrement: () => dispatch({ type: "DECREMENT", decrementBy: 1 }),
-    reset: () => dispatch(Reset())
+    reset: () => dispatch({ type: "RESET" })
   };
 };
 
